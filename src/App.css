@@ -1,38 +1,143 @@
-.App {
-  text-align: center;
-}
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body{
+  background-color: #00162c;
+ color: #002e5b;
+ /* display: flex;
+ align-items: center;
+ justify-content: center; */
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.badge{
+  transform: translateY(-60%) translateX(5px);
+  background-color: #00162c;
+ color: white;
+ font-weight: 500;
+ letter-spacing: 1px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
+@keyframes spin {
   from {
-    transform: rotate(0deg);
+      transform: rotate(0);
   }
+
   to {
-    transform: rotate(360deg);
+      transform: rotate(359deg);
+  }
+}
+
+@keyframes spin3D {
+  from {
+      transform: rotate3d(.5, .5, .5, 360deg);
+  }
+
+  to {
+      transform: rotate3d(0deg);
+  }
+}
+
+@keyframes configure-clockwise {
+  0% {
+      transform: rotate(0);
+  }
+
+  25% {
+      transform: rotate(90deg);
+  }
+
+  50% {
+      transform: rotate(180deg);
+  }
+
+  75% {
+      transform: rotate(270deg);
+  }
+
+  100% {
+      transform: rotate(360deg);
+  }
+}
+
+@keyframes configure-xclockwise {
+  0% {
+      transform: rotate(45deg);
+  }
+
+  25% {
+      transform: rotate(-45deg);
+  }
+
+  50% {
+      transform: rotate(-135deg);
+  }
+
+  75% {
+      transform: rotate(-225deg);
+  }
+
+  100% {
+      transform: rotate(-315deg);
+  }
+}
+
+@keyframes pulse {
+  from {
+      opacity: 1;
+      transform: scale(1);
+  }
+
+  to {
+      opacity: .25;
+      transform: scale(.75);
+  }
+}
+
+/* GRID STYLING */
+
+
+
+.spinner-box {
+  width: 300px;
+  height: 300px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+  transform: scale(0.8);
+}
+
+/* SPINNING CIRCLE */
+
+
+
+
+
+
+/* ALTERNATING ORBITS */
+
+.circle-border {
+  width: 150px;
+  height: 150px;
+  padding: 7px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  background: rgb(149, 252, 236);
+  background: linear-gradient(0deg, rgba(107, 109, 109, 0.407) 33%, rgb(169, 244, 233) 100%);
+  animation: spin .8s linear 0s infinite;
+}
+
+.circle-core {
+  width: 100%;
+  height: 100%;
+  background-color: #00162c;
+  border-radius: 50%;
+}
+
+
+@media all and (max-width: 402px){
+  .card-title{
+    font-size: 14px;
+  }
+  .card-text{
+    font-size: 12px
   }
 }
